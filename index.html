@@ -556,6 +556,42 @@
 				    });
 			</script>
 
+			<script>
+			    // JavaScript代码用于处理粒子和鼠标的交互
+			    const dynamicBackground = document.getElementById('dynamic-background');
+			    const particles = document.createElement('div');
+			    particles.classList.add('particles-container');
+			    dynamicBackground.appendChild(particles);
+			
+			    const numParticles = 100; // 更改此值以控制粒子数量
+			
+			    // 创建粒子
+			    for (let i = 0; i < numParticles; i++) {
+			        const particle = document.createElement('div');
+			        particle.classList.add('particle');
+			        particles.appendChild(particle);
+			    }
+			
+			    // 监听鼠标移动事件
+			    dynamicBackground.addEventListener('mousemove', (e) => {
+			        const mouseX = e.clientX;
+			        const mouseY = e.clientY;
+			
+			        // 移动粒子以跟随鼠标位置
+			        const particles = document.querySelectorAll('.particle');
+			        particles.forEach((particle) => {
+			            const particleX = particle.getBoundingClientRect().left;
+			            const particleY = particle.getBoundingClientRect().top;
+			            const dx = mouseX - particleX - 5;
+			            const dy = mouseY - particleY - 5;
+			
+			            // 根据鼠标和粒子的位置设置位移
+			            particle.style.transform = `translate(${dx}px, ${dy}px)`;
+			        });
+			    });
+			</script>
+
+
 
 	</body>
 
