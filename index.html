@@ -502,58 +502,58 @@
 			</script>
 
 			<script>
-			    // JavaScript代码用于控制光点飞行动画
-			    const lightPoints = document.querySelectorAll('.light-point');
-			
-			    // 遍历所有光点
-			    lightPoints.forEach((point) => {
-			        // 随机生成光点的初始位置和速度
-			        const startX = Math.random() * window.innerWidth;
-			        const startY = Math.random() * window.innerHeight;
-			        const speed = 1 + Math.random() * 2; // 随机速度
-			
-			        point.style.left = `${startX}px`;
-			        point.style.top = `${startY}px`;
-			
-			        // 随机生成目标位置
-			        const targetX = Math.random() * window.innerWidth;
-			        const targetY = Math.random() * window.innerHeight;
-			
-			        // 计算光点的位移
-			        const dx = targetX - startX;
-			        const dy = targetY - startY;
-			
-			        // 计算飞行的距离
-			        const distance = Math.sqrt(dx * dx + dy * dy);
-			
-			        // 计算飞行的时间（速度 = 距离 / 时间）
-			        const time = distance / speed;
-			
-			        // 使用CSS动画
-			        point.style.transition = `transform ${time}s linear`;
-			
-			        // 应用位移
-			        point.style.transform = `translate(${dx}px, ${dy}px)`;
-			
-			        // 监听动画结束事件，以便重新开始动画
-			        point.addEventListener('transitionend', () => {
-			            // 重新生成目标位置
-			            const newTargetX = Math.random() * window.innerWidth;
-			            const newTargetY = Math.random() * window.innerHeight;
-			
-			            // 计算新的位移
-			            const newDx = newTargetX - targetX;
-			            const newDy = newTargetY - targetY;
-			
-			            // 计算新的飞行的时间
-			            const newDistance = Math.sqrt(newDx * newDx + newDy * newDy);
-			            const newTime = newDistance / speed;
-			
-			            // 更新目标位置和动画时间
-			            point.style.transition = `transform ${newTime}s linear`;
-			            point.style.transform = `translate(${newDx}px, ${newDy}px`;
-			        });
-			    });
+				    // JavaScript代码用于控制光点飞行动画
+				    const lightPoints = document.querySelectorAll('.light-point');
+				
+				    // 遍历所有光点
+				    lightPoints.forEach((point) => {
+				        // 随机生成光点的初始位置和速度
+				        const startX = Math.random() * window.innerWidth;
+				        const startY = Math.random() * window.innerHeight;
+				        const speed = 1 + Math.random() * 2; // 随机速度
+				
+				        point.style.left = `${startX}px`;
+				        point.style.top = `${startY}px`;
+				
+				        // 随机生成目标位置
+				        const targetX = Math.random() * window.innerWidth;
+				        const targetY = Math.random() * window.innerHeight;
+				
+				        // 计算光点的位移
+				        const dx = targetX - startX;
+				        const dy = targetY - startY;
+				
+				        // 计算飞行的距离
+				        const distance = Math.sqrt(dx * dx + dy * dy);
+				
+				        // 计算飞行的时间（速度 = 距离 / 时间）
+				        const time = distance / speed;
+				
+				        // 使用CSS动画
+				        point.style.transition = `transform ${time}s linear`;
+				
+				        // 应用位移
+				        point.style.transform = `translate(${dx}px, ${dy}px)`;
+				
+				        // 监听动画结束事件，以便重新开始动画
+				        point.addEventListener('transitionend', () => {
+				            // 重新生成目标位置
+				            const newTargetX = Math.random() * window.innerWidth;
+				            const newTargetY = Math.random() * window.innerHeight;
+				
+				            // 计算新的位移
+				            const newDx = newTargetX - targetX;
+				            const newDy = newTargetY - targetY;
+				
+				            // 计算新的飞行的时间
+				            const newDistance = Math.sqrt(newDx * newDx + newDy * newDy);
+				            const newTime = newDistance / speed;
+				
+				            // 更新目标位置和动画时间
+				            point.style.transition = `transform ${newTime}s linear`;
+				            point.style.transform = `translate(${newDx}px, ${newDy}px`;
+				        });
+				    });
 			</script>
 
 
