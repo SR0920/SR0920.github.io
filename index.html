@@ -18,11 +18,36 @@
 		            z-index: -1;
 			    background-color: #FFFFE0; /* 使用十六进制颜色代码 */
 		        }
+			#light-points {
+		            position: fixed;
+		            top: 0;
+		            left: 0;
+		            width: 100%;
+		            height: 100%;
+		            z-index: -1;
+		        }
+		        .light-point {
+		            position: absolute;
+		            background: #ffffff; /* 光点的颜色 */
+		            width: 5px;
+		            height: 5px;
+		            border-radius: 50%;
+		            opacity: 0.8;
+		        }
 		</style>
 
 	</head>
 	<body class="is-preload">
 			<div id="dynamic-background"></div> <!-- 动态粒子背景容器 -->
+
+			<!-- 光点容器 -->
+		   		 <div id="light-points">
+		       	 	<!-- 使用JavaScript来添加光点元素 -->
+		        	<div class="light-point"></div>
+		        	<div class="light-point"></div>
+		        	<!-- 添加更多光点 -->
+   			</div>
+		
 		<!-- 顶部导航栏 -->
 			<nav id="nav">
 				<ul class="container">
@@ -342,7 +367,7 @@
 					<!-- 底部按钮 -->
 					<footer>
 						<a href="https://flowus.cn/siri0920/b94f2fb8-1265-458c-95d7-9813afada1e8" class="button large scrolly">实用网站分享</a>	
-						<a href="MyWeb_One.html" class="button large">合集</a> <!-- 这是新页面的链接按钮 -->
+						<a href="MyWeb_One.html" class="button large">待续...</a> <!-- 这是新页面的链接按钮 -->
 					</footer>
 				</div>
 			</article>
@@ -467,6 +492,41 @@
 				  },
 				  "retina_detect": true
 				});
+			</script>
+
+			<script>
+			    // JavaScript代码用于控制光点飞行动画
+			    const lightPoints = document.querySelectorAll('.light-point');
+			    
+			    // 随机生成光点的初始位置和速度
+			    lightPoints.forEach((point) => {
+			        const startX = Math.random() * window.innerWidth;
+			        const startY = Math.random() * window.innerHeight;
+			        const speed = 1 + Math.random() * 2; // 随机速度
+			
+			        point.style.left = `${startX}px`;
+			        point.style.top = `${startY}px`;
+			
+			        // 随机生成目标位置
+			        const targetX = Math.random() * window.innerWidth;
+			        const targetY = Math.random() * window.innerHeight;
+			
+			        // 计算光点的位移
+			        const dx = targetX - startX;
+			        const dy = targetY - startY;
+			
+			        // 计算飞行的距离
+			        const distance = Math.sqrt(dx * dx + dy * dy);
+			
+			        // 计算飞行的时间（速度 = 距离 / 时间）
+			        const time = distance / speed;
+			
+			        // 使用CSS动画
+			        point.style.transition = `transform ${time}s linear`;
+			
+			        // 应用位移
+			        point.style.transform = `translate(${dx}px, ${dy}px)`;
+			    });
 			</script>
 
 	</body>
