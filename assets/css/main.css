@@ -1505,13 +1505,6 @@ input, select, textarea {
 
 		}
 
-.paper-number {
-    display: inline-block;
-    width: 1.5em; /* 根据需要调整序号宽度 */
-    text-align: right;
-    margin-right: 0.5em; /* 根据需要调整序号与文字之间的间距 */
-}
-
 /* Form */
 
 	form label {
@@ -1897,6 +1890,14 @@ input, select, textarea {
 					ul.social li a:hover:before {
 						background-color: transparent;
 					}
+
+/* Paper Number */
+	.paper-number {
+		display: inline-block;
+		width: 1.5em; /* 根据需要调整序号宽度 */
+		text-align: right;
+		margin-right: 0.5em; /* 根据需要调整序号与文字之间的间距 */
+	}
 
 /* Actions */
 
