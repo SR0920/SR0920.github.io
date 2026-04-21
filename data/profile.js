@@ -391,9 +391,9 @@ window.PROFILE = {
     { date: "2023-10", type: "national", title: "ICCSMT 2023 Best Oral Presentation", detail: "唯一一项" },
     { date: "2023-08", type: "national", title: "研究生电子设计竞赛全国一等奖", detail: "第十八届中国研究生电子设计竞赛" },
     { date: "2023-08", type: "national", title: "研究生电子设计竞赛最佳论文奖", detail: "第十八届中国研究生电子设计竞赛" },
-    { date: "2021-10", type: "national", title: "中国国际"互联网+"大赛国家级铜奖", detail: "第七届" },
+    { date: "2021-10", type: "national", title: "中国国际互联网+大赛国家级铜奖", detail: "第七届" },
     // ── 省级 ──
-    { date: "2023-10", type: "provincial", title: ""互联网+"大赛陕西省银奖", detail: "第九届中国国际"互联网+"大赛" },
+    { date: "2023-10", type: "provincial", title: "互联网+大赛陕西省银奖", detail: "第九届中国国际互联网+大赛" },
     { date: "2023-07", type: "provincial", title: "陕西省研究生创新成果展省级二等奖", detail: "陕西省第七届研究生创新成果展" },
     { date: "2023-07", type: "provincial", title: "研电赛技术赛西北赛区一等奖", detail: "中国研究生电子设计竞赛" },
     { date: "2023-07", type: "provincial", title: "研电赛商业赛西北赛区二等奖", detail: "中国研究生电子设计竞赛" },
