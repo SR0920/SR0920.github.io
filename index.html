@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>孙瑞 | 复旦大学博士研究生</title>
+  <meta name="description" content="孙瑞的个人学术主页 — 复旦大学博士研究生，研究方向：计算机视觉、深度学习、多模态大模型" />
+  <!-- 字体：标题用 Noto Serif SC（衬线中文），正文用 LXGW WenKai（手写风中文），代码用 JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     炫酷背景层：WebGL 风格 Canvas 粒子场 + 渐变网格
+     ══════════════════════════════════════════════════════ -->
+<div class="bg-layers">
+  <!-- 渐变网格底层 -->
+  <div class="bg-gradient-mesh"></div>
+  <!-- 粒子 Canvas -->
+  <canvas id="bgCanvas"></canvas>
+  <!-- 扫描线叠层（营造科技感） -->
+  <div class="bg-scanlines"></div>
+  <!-- 角落光晕 -->
+  <div class="bg-glow bg-glow-tl"></div>
+  <div class="bg-glow bg-glow-br"></div>
+</div>
+
+<!-- 自定义鼠标 -->
+<div class="cursor-dot"  id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     加载屏幕
+     ══════════════════════════════════════════════════════ -->
+<div class="loading-screen" id="loadingScreen">
+  <div class="loading-inner">
+    <div class="loading-char">孙</div>
+    <div class="loading-name">Rui Sun · 孙瑞</div>
+    <div class="loading-track"><div class="loading-fill" id="loadFill"></div></div>
+    <div class="loading-tip" id="loadTip">正在初始化…</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     顶部导航栏
+     ══════════════════════════════════════════════════════ -->
+<nav class="topnav" id="topnav">
+  <!-- 品牌 Logo -->
+  <div class="nav-brand">
+    <span class="nav-logo-char">孙</span>
+    <div class="nav-brand-text">
+      <span class="nav-name">孙瑞</span>
+      <span class="nav-sub">Fudan University · PhD</span>
+    </div>
+  </div>
+
+  <!-- 主导航链接 — 每个 data-page 对应 pages/ 下的子文件 -->
+  <ul class="nav-links" id="navLinks" role="navigation">
+    <li><a class="nav-link active" data-page="home"         href="#">🏠 主页</a></li>
+    <li><a class="nav-link"        data-page="publications" href="#">📄 论文成果</a></li>
+    <li><a class="nav-link"        data-page="experience"   href="#">🔬 科研经历</a></li>
+    <li><a class="nav-link"        data-page="leadership"   href="#">🎖️ 学生干部</a></li>
+    <li><a class="nav-link"        data-page="honors"       href="#">🏆 荣誉奖项</a></li>
+    <li><a class="nav-link"        data-page="contact"      href="#">✉️ 联系方式</a></li>
+  </ul>
+
+  <!-- 右侧控件 -->
+  <div class="nav-controls">
+    <button class="ctrl-btn" id="themeBtn" title="切换主题（T）">
+      <span id="themeIcon">☀</span>
+    </button>
+    <!-- 汉堡菜单（移动端） -->
+    <button class="hamburger" id="hamburger" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- 移动端抽屉菜单 -->
+<div class="drawer" id="drawer">
+  <a class="drawer-link active" data-page="home">🏠 主页</a>
+  <a class="drawer-link" data-page="publications">📄 论文成果</a>
+  <a class="drawer-link" data-page="experience">🔬 科研经历</a>
+  <a class="drawer-link" data-page="leadership">🎖️ 学生干部</a>
+  <a class="drawer-link" data-page="honors">🏆 荣誉奖项</a>
+  <a class="drawer-link" data-page="contact">✉️ 联系方式</a>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     主体三栏布局：左侧边栏 | 内容区 | 右面板
+     ══════════════════════════════════════════════════════ -->
+<div class="site-body">
+
+  <!-- ────────── 左侧边栏 ────────── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+
+      <!-- 头像 & 基本信息 -->
+      <div class="profile-card" id="profileCard">
+        <!-- 头像由 JS 渲染 -->
+      </div>
+
+      <!-- 教育背景 -->
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">教育背景</div>
+        <div class="edu-timeline" id="eduTimeline">
+          <!-- 由 JS 渲染 -->
+        </div>
+      </div>
+
+      <!-- 研究兴趣 -->
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">研究兴趣</div>
+        <div class="interest-tags" id="interestTags"><!-- JS --></div>
+      </div>
+
+      <!-- 技能 -->
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">技术技能</div>
+        <div class="skill-list" id="skillList"><!-- JS --></div>
+      </div>
+
+      <!-- 社交链接 -->
+      <div class="sidebar-block">
+        <div class="sidebar-block-title">快速链接</div>
+        <div class="quick-links" id="quickLinks"><!-- JS --></div>
+      </div>
+
+      <!-- 统计数字 -->
+      <div class="sidebar-stats" id="sideStats"><!-- JS --></div>
+
+    </div>
+  </aside>
+
+  <!-- ────────── 内容区（动态加载子页面） ────────── -->
+  <main class="content-main" id="contentMain">
+    <!-- 内容由 script.js 中的路由系统注入 -->
+    <div class="page-loading" id="pageLoading">
+      <div class="pl-spinner"></div>
+    </div>
+  </main>
+
+  <!-- ────────── 右侧面板（桌面端） ────────── -->
+  <aside class="right-panel" id="rightPanel">
+
+    <!-- 日历 -->
+    <div class="rp-card" id="calendarCard">
+      <div class="rp-card-title">
+        <span>📅</span>
+        <span id="calMonthLabel"></span>
+        <div class="cal-nav-btns">
+          <button onclick="calPrev()">‹</button>
+          <button onclick="calNext()">›</button>
+        </div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-footer" id="calFooter"></div>
+    </div>
+
+    <!-- 审稿人 / 学术服务 -->
+    <div class="rp-card" id="reviewerCard">
+      <div class="rp-card-title"><span>📝</span><span>担任期刊审稿人</span></div>
+      <div id="reviewerList"><!-- JS --></div>
+    </div>
+
+    <!-- 访问统计 -->
+    <div class="rp-card">
+      <div class="rp-card-title"><span>👁️</span><span>访问统计</span></div>
+      <div class="visit-counter" id="visitCounter"><!-- JS --></div>
+    </div>
+
+    <!-- 快速联系 -->
+    <div class="rp-card">
+      <div class="rp-card-title"><span>🔗</span><span>快速联系</span></div>
+      <div class="rp-contact" id="rpContact"><!-- JS --></div>
+    </div>
+
+  </aside>
+
+</div><!-- end site-body -->
+
+<!-- 回到顶部 -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- Toast 提示 -->
+<div class="toast" id="toast"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     脚本加载顺序：数据层 → 各子页面 → 主逻辑
+     ══════════════════════════════════════════════════════ -->
+<script src="data/profile.js"></script>
+<script src="pages/home.js"></script>
+<script src="pages/publications.js"></script>
+<script src="pages/experience.js"></script>
+<script src="pages/leadership.js"></script>
+<script src="pages/honors.js"></script>
+<script src="pages/contact.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
