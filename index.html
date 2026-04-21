@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>张明远 | 人工智能研究员</title>
+  <meta name="description" content="张明远的个人学术主页 - 专注于深度学习、计算机视觉和自然语言处理研究" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ========== CANVAS BACKGROUND ========== -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- ========== CURSOR ========== -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ========== LOADING SCREEN ========== -->
+<div class="loading-screen" id="loadingScreen">
+  <div class="loading-inner">
+    <div class="loading-logo">张</div>
+    <div class="loading-bar"><div class="loading-progress" id="loadingBar"></div></div>
+    <div class="loading-text" id="loadingText">初始化...</div>
+  </div>
+</div>
+
+<!-- ========== TOP NAV ========== -->
+<nav class="topnav" id="topnav">
+  <div class="nav-brand">
+    <span class="nav-logo">张明远</span>
+    <span class="nav-title-en">Zhang Mingyuan</span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="nav-link active" data-section="home">主页</a></li>
+    <li><a href="#publications" class="nav-link" data-section="publications">论文成果</a></li>
+    <li><a href="#experience" class="nav-link" data-section="experience">科研经历</a></li>
+    <li><a href="#honors" class="nav-link" data-section="honors">荣誉奖项</a></li>
+    <li><a href="#teaching" class="nav-link" data-section="teaching">教学服务</a></li>
+    <li><a href="#contact" class="nav-link" data-section="contact">联系方式</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="lang-btn" id="langBtn" title="Switch Language">EN</button>
+    <button class="theme-btn" id="themeBtn" title="Toggle Theme" aria-label="Toggle theme">
+      <span class="theme-icon">☀</span>
+    </button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" class="mob-link">主页</a>
+  <a href="#publications" class="mob-link">论文成果</a>
+  <a href="#experience" class="mob-link">科研经历</a>
+  <a href="#honors" class="mob-link">荣誉奖项</a>
+  <a href="#teaching" class="mob-link">教学服务</a>
+  <a href="#contact" class="mob-link">联系方式</a>
+</div>
+
+<!-- ========== MAIN LAYOUT ========== -->
+<main class="site-main">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-sticky">
+
+      <div class="profile-block">
+        <div class="avatar-wrap">
+          <div class="avatar-ring"></div>
+          <img class="avatar-img" src="https://api.dicebear.com/7.x/avataaars/svg?seed=MingYuan&backgroundColor=b6e3f4" alt="张明远头像" />
+          <div class="status-dot" title="在校博士生"></div>
+        </div>
+        <h1 class="profile-name" data-i18n="name">张明远</h1>
+        <p class="profile-subtitle" data-i18n="subtitle">人工智能博士生 · 机器学习研究员</p>
+        <div class="profile-badges">
+          <span class="badge badge-blue">清华大学</span>
+          <span class="badge badge-orange">NeurIPS 2024</span>
+        </div>
+      </div>
+
+      <div class="info-list">
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <span data-i18n="location">中国 · 北京</span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">✉️</span>
+          <a href="mailto:zmyuan@example.edu.cn">zmyuan@example.edu.cn</a>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">🎓</span>
+          <span data-i18n="affiliation">清华大学计算机系</span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">🔬</span>
+          <span data-i18n="lab">智能信息处理实验室</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-heading" data-i18n="education">教育背景</h3>
+        <div class="edu-list">
+          <div class="edu-item">
+            <div class="edu-dot edu-dot-active"></div>
+            <div>
+              <div class="edu-school">清华大学</div>
+              <div class="edu-degree">博士在读 · 计算机科学</div>
+              <div class="edu-year">2022 – 至今</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-dot"></div>
+            <div>
+              <div class="edu-school">北京大学</div>
+              <div class="edu-degree">硕士 · 人工智能</div>
+              <div class="edu-year">2019 – 2022</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-dot"></div>
+            <div>
+              <div class="edu-school">浙江大学</div>
+              <div class="edu-degree">学士 · 计算机科学</div>
+              <div class="edu-year">2015 – 2019</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-heading" data-i18n="interests">研究兴趣</h3>
+        <div class="tag-cloud">
+          <span class="tag tag-primary">深度学习</span>
+          <span class="tag tag-primary">计算机视觉</span>
+          <span class="tag tag-secondary">自然语言处理</span>
+          <span class="tag tag-secondary">强化学习</span>
+          <span class="tag tag-secondary">多模态学习</span>
+          <span class="tag tag-accent">大语言模型</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-heading" data-i18n="skills">技术技能</h3>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Python</span><span class="skill-pct">98%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="98"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>PyTorch</span><span class="skill-pct">95%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="95"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>TensorFlow</span><span class="skill-pct">80%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="80"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>CUDA / C++</span><span class="skill-pct">75%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="75"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-heading">社交链接</h3>
+        <div class="social-links">
+          <a href="#" class="social-link" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#" class="social-link" title="Google Scholar">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5 12 0z"/></svg>
+            Scholar
+          </a>
+          <a href="#" class="social-link" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="#" class="social-link" title="Twitter/X">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Twitter
+          </a>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="sidebar-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-count="6">0</span>
+          <span class="stat-label">发表论文</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="450">0</span>
+          <span class="stat-label">引用次数</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="3">0</span>
+          <span class="stat-label">年研究经验</span>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ===== CONTENT AREA ===== -->
+  <div class="content-area">
+
+    <!-- ======= HOME SECTION ======= -->
+    <section id="home" class="section active">
+      <div class="section-hero">
+        <div class="hero-eyebrow">欢迎来到我的</div>
+        <h2 class="hero-title">个人学术主页</h2>
+        <p class="hero-sub">探索人工智能的无限可能 · Exploring the Frontiers of AI</p>
+        <div class="hero-cta">
+          <a href="#publications" class="btn btn-primary">查看论文 →</a>
+          <a href="cv.pdf" class="btn btn-ghost" download>下载简历</a>
+        </div>
+      </div>
+
+      <!-- About Card -->
+      <div class="card reveal">
+        <div class="card-header">
+          <span class="card-icon">⚡</span>
+          <h3 data-i18n="about">关于我</h3>
+        </div>
+        <p class="about-text" data-i18n="aboutText">
+          专注于<strong>深度学习、计算机视觉和自然语言处理</strong>研究。目前在顶级AI实验室攻读博士学位，致力于推动人工智能技术的边界。近期研究聚焦于 Transformer 架构优化与多模态大语言模型的高效训练方法。
+        </p>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <div class="highlight-icon">🏆</div>
+            <div>
+              <div class="highlight-title">NeurIPS 2024 杰出论文奖</div>
+              <div class="highlight-sub">Top 0.5% of submissions</div>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">🎓</div>
+            <div>
+              <div class="highlight-title">Google PhD Fellowship 2024</div>
+              <div class="highlight-sub">Machine Learning track</div>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">🔬</div>
+            <div>
+              <div class="highlight-title">Google Research 实习</div>
+              <div class="highlight-sub">Gemini 多模态优化团队</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- News Section -->
+      <div class="card reveal">
+        <div class="card-header">
+          <span class="card-icon">📰</span>
+          <h3 data-i18n="news">最新动态</h3>
+          <span class="news-count-badge">4</span>
+        </div>
+        <div class="news-feed" id="newsFeed">
+          <div class="news-item news-item-new">
+            <div class="news-meta">
+              <span class="news-date">2024-12</span>
+              <span class="news-tag tag-red">论文</span>
+            </div>
+            <div class="news-content">论文被 <strong>NeurIPS 2024</strong> 接收，获得<em>杰出论文奖</em></div>
+          </div>
+          <div class="news-item">
+            <div class="news-meta">
+              <span class="news-date">2024-11</span>
+              <span class="news-tag tag-blue">会议</span>
+            </div>
+            <div class="news-content">参加 <strong>EMNLP 2024</strong> 学术会议并作口头报告</div>
+          </div>
+          <div class="news-item">
+            <div class="news-meta">
+              <span class="news-date">2024-09</span>
+              <span class="news-tag tag-gold">奖项</span>
+            </div>
+            <div class="news-content">获得 <strong>Google PhD Fellowship 2024</strong> 奖学金</div>
+          </div>
+          <div class="news-item">
+            <div class="news-meta">
+              <span class="news-date">2024-06</span>
+              <span class="news-tag tag-green">实习</span>
+            </div>
+            <div class="news-content">开始在 <strong>Google Research</strong> 实习，参与 Gemini 多模态优化项目</div>
+          </div>
+          <div class="news-item news-hidden" id="moreNews">
+            <div class="news-meta">
+              <span class="news-date">2024-03</span>
+              <span class="news-tag tag-blue">会议</span>
+            </div>
+            <div class="news-content">论文被 <strong>CVPR 2024</strong> 接收，赴西雅图作口头报告</div>
+          </div>
+          <div class="news-item news-hidden">
+            <div class="news-meta">
+              <span class="news-date">2023-12</span>
+              <span class="news-tag tag-red">论文</span>
+            </div>
+            <div class="news-content">在 <strong>NeurIPS 2023</strong> 发表 Workshop 论文</div>
+          </div>
+        </div>
+        <button class="news-toggle-btn" id="newsToggleBtn" onclick="toggleMoreNews()">
+          展开更多动态 ↓
+        </button>
+      </div>
+
+      <!-- Research Directions -->
+      <div class="card reveal">
+        <div class="card-header">
+          <span class="card-icon">🔭</span>
+          <h3 data-i18n="researchDir">研究方向</h3>
+        </div>
+        <div class="research-grid">
+          <div class="research-card" data-topic="dl">
+            <div class="research-card-icon">🧠</div>
+            <div class="research-card-title">深度学习理论</div>
+            <div class="research-card-desc">Transformer架构优化、高效注意力机制、模型压缩与加速</div>
+            <div class="research-card-papers">3 篇相关论文</div>
+          </div>
+          <div class="research-card" data-topic="cv">
+            <div class="research-card-icon">👁️</div>
+            <div class="research-card-title">计算机视觉</div>
+            <div class="research-card-desc">目标检测、图像分割、视觉-语言跨模态理解</div>
+            <div class="research-card-papers">2 篇相关论文</div>
+          </div>
+          <div class="research-card" data-topic="nlp">
+            <div class="research-card-icon">💬</div>
+            <div class="research-card-title">自然语言处理</div>
+            <div class="research-card-desc">大语言模型微调、指令对齐、多语言迁移学习</div>
+            <div class="research-card-papers">2 篇相关论文</div>
+          </div>
+          <div class="research-card" data-topic="rl">
+            <div class="research-card-icon">🎮</div>
+            <div class="research-card-title">强化学习</div>
+            <div class="research-card-desc">RLHF、离线强化学习、基于模型的规划算法</div>
+            <div class="research-card-papers">1 篇相关论文</div>
+          </div>
+          <div class="research-card" data-topic="mm">
+            <div class="research-card-icon">🌐</div>
+            <div class="research-card-title">多模态学习</div>
+            <div class="research-card-desc">视觉-语言-音频融合、跨模态生成与理解</div>
+            <div class="research-card-papers">1 篇相关论文</div>
+          </div>
+          <div class="research-card" data-topic="gen">
+            <div class="research-card-icon">✨</div>
+            <div class="research-card-title">生成式 AI</div>
+            <div class="research-card-desc">扩散模型、可控生成、AI内容评估</div>
+            <div class="research-card-papers">进行中</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======= PUBLICATIONS SECTION ======= -->
+    <section id="publications" class="section">
+      <div class="section-title-block">
+        <h2 class="section-title" data-i18n="pubTitle">论文成果</h2>
+        <p class="section-desc">共发表顶级会议/期刊论文 6 篇，总引用 450+</p>
+      </div>
+
+      <!-- Filter -->
+      <div class="pub-filter">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="neurips">NeurIPS</button>
+        <button class="filter-btn" data-filter="cvpr">CVPR</button>
+        <button class="filter-btn" data-filter="emnlp">EMNLP/ACL</button>
+        <button class="filter-btn" data-filter="2024">2024</button>
+        <button class="filter-btn" data-filter="2023">2023</button>
+      </div>
+
+      <div class="pub-list" id="pubList">
+
+        <div class="pub-card reveal" data-tags="neurips 2024" data-award="true">
+          <div class="pub-year-tag">2024</div>
+          <div class="pub-award-badge">🏆 杰出论文奖</div>
+          <h4 class="pub-title">
+            <a href="#">EfficientAttn: Scalable Attention Mechanism for Long-Context Transformers</a>
+          </h4>
+          <div class="pub-authors"><strong>张明远</strong>, 李华, 王晓, John Smith</div>
+          <div class="pub-venue venue-neurips">NeurIPS 2024 · Neural Information Processing Systems</div>
+          <p class="pub-abstract">我们提出了一种新型高效注意力机制，在保持模型性能的同时将计算复杂度从 O(n²) 降至 O(n log n)...</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link">📄 论文</a>
+            <a href="#" class="pub-link">💻 代码</a>
+            <a href="#" class="pub-link">🎬 视频</a>
+            <a href="#" class="pub-link">📊 海报</a>
+            <span class="pub-cite">被引用 120+</span>
+          </div>
+          <div class="pub-bibtex-toggle" onclick="toggleBibtex(this)">查看 BibTeX ▸</div>
+          <div class="pub-bibtex">
+<pre>@inproceedings{zhang2024efficientattn,
+  title={EfficientAttn: Scalable Attention Mechanism for Long-Context Transformers},
+  author={Zhang, Mingyuan and Li, Hua and Wang, Xiao and Smith, John},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2024}
+}</pre>
+          </div>
+        </div>
+
+        <div class="pub-card reveal" data-tags="cvpr 2024">
+          <div class="pub-year-tag">2024</div>
+          <h4 class="pub-title">
+            <a href="#">CrossModal-Seg: Unified Vision-Language Segmentation with Minimal Annotations</a>
+          </h4>
+          <div class="pub-authors"><strong>张明远</strong>, 陈云, Priya Sharma</div>
+          <div class="pub-venue venue-cvpr">CVPR 2024 · Computer Vision and Pattern Recognition</div>
+          <p class="pub-abstract">提出跨模态分割框架，利用自然语言监督信号实现仅需少量标注的精准图像分割...</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link">📄 论文</a>
+            <a href="#" class="pub-link">💻 代码</a>
+            <a href="#" class="pub-link">🌐 项目主页</a>
+            <span class="pub-cite">被引用 85+</span>
+          </div>
+          <div class="pub-bibtex-toggle" onclick="toggleBibtex(this)">查看 BibTeX ▸</div>
+          <div class="pub-bibtex">
+<pre>@inproceedings{zhang2024crossmodalseg,
+  title={CrossModal-Seg: Unified Vision-Language Segmentation with Minimal Annotations},
+  author={Zhang, Mingyuan and Chen, Yun and Sharma, Priya},
+  booktitle={CVPR},
+  year={2024}
+}</pre>
+          </div>
+        </div>
+
+        <div class="pub-card reveal" data-tags="emnlp 2024">
+          <div class="pub-year-tag">2024</div>
+          <h4 class="pub-title">
+            <a href="#">MultiLingualAlign: Cross-Lingual Alignment for Low-Resource Transfer Learning</a>
+          </h4>
+          <div class="pub-authors"><strong>张明远</strong>, 赵磊, Maria Garcia</div>
+          <div class="pub-venue venue-emnlp">EMNLP 2024 · Empirical Methods in Natural Language Processing</div>
+          <p class="pub-abstract">针对低资源语言的跨语言对齐方法，通过少量双语对齐数据实现高质量迁移学习...</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link">📄 论文</a>
+            <a href="#" class="pub-link">💻 代码</a>
+            <a href="#" class="pub-link">📊 数据集</a>
+            <span class="pub-cite">被引用 45+</span>
+          </div>
+          <div class="pub-bibtex-toggle" onclick="toggleBibtex(this)">查看 BibTeX ▸</div>
+          <div class="pub-bibtex">
+<pre>@inproceedings{zhang2024multilingualign,
+  title={MultiLingualAlign: Cross-Lingual Alignment for Low-Resource Transfer Learning},
+  author={Zhang, Mingyuan and Zhao, Lei and Garcia, Maria},
+  booktitle={EMNLP},
+  year={2024}
+}</pre>
+          </div>
+        </div>
+
+        <div class="pub-card reveal" data-tags="neurips 2023">
+          <div class="pub-year-tag">2023</div>
+          <h4 class="pub-title">
+            <a href="#">RLAlign: Reinforcement Learning from Human Feedback with Contrastive Objectives</a>
+          </h4>
+          <div class="pub-authors">李华, <strong>张明远</strong>, 王晓明, David Lee</div>
+          <div class="pub-venue venue-neurips">NeurIPS 2023 · Neural Information Processing Systems</div>
+          <p class="pub-abstract">提出基于对比目标的RLHF框架，显著提升大语言模型与人类偏好的对齐效果...</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link">📄 论文</a>
+            <a href="#" class="pub-link">💻 代码</a>
+            <span class="pub-cite">被引用 132+</span>
+          </div>
+          <div class="pub-bibtex-toggle" onclick="toggleBibtex(this)">查看 BibTeX ▸</div>
+          <div class="pub-bibtex">
+<pre>@inproceedings{li2023rlalign,
+  title={RLAlign: Reinforcement Learning from Human Feedback with Contrastive Objectives},
+  author={Li, Hua and Zhang, Mingyuan and Wang, Xiaoming and Lee, David},
+  booktitle={NeurIPS},
+  year={2023}
+}</pre>
+          </div>
+        </div>
+
+        <div class="pub-card reveal" data-tags="cvpr 2023">
+          <div class="pub-year-tag">2023</div>
+          <h4 class="pub-title">
+            <a href="#">DiffVision: Diffusion-Based Few-Shot Object Detection</a>
+          </h4>
+          <div class="pub-authors"><strong>张明远</strong>, 刘强, Sarah Chen</div>
+          <div class="pub-venue venue-cvpr">CVPR 2023 · Computer Vision and Pattern Recognition</div>
+          <p class="pub-abstract">将扩散模型引入小样本目标检测，通过生成式数据增强显著提升检测精度...</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link">📄 论文</a>
+            <a href="#" class="pub-link">💻 代码</a>
+            <span class="pub-cite">被引用 68+</span>
+          </div>
+          <div class="pub-bibtex-toggle" onclick="toggleBibtex(this)">查看 BibTeX ▸</div>
+          <div class="pub-bibtex">
+<pre>@inproceedings{zhang2023diffvision,
+  title={DiffVision: Diffusion-Based Few-Shot Object Detection},
+  author={Zhang, Mingyuan and Liu, Qiang and Chen, Sarah},
+  booktitle={CVPR},
+  year={2023}
+}</pre>
+          </div>
+        </div>
+
+        <div class="pub-card reveal" data-tags="emnlp 2022">
+          <div class="pub-year-tag">2022</div>
+          <h4 class="pub-title">
+            <a href="#">Efficient Knowledge Distillation for Multilingual Language Models</a>
+          </h4>
+          <div class="pub-authors"><strong>张明远</strong>, 赵磊</div>
+          <div class="pub-venue venue-emnlp">EMNLP 2022 · Empirical Methods in Natural Language Processing</div>
+          <p class="pub-abstract">面向多语言场景的高效知识蒸馏框架，在保持精度的同时压缩模型至1/4体积...</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link">📄 论文</a>
+            <a href="#" class="pub-link">💻 代码</a>
+            <span class="pub-cite">被引用 55+</span>
+          </div>
+          <div class="pub-bibtex-toggle" onclick="toggleBibtex(this)">查看 BibTeX ▸</div>
+          <div class="pub-bibtex">
+<pre>@inproceedings{zhang2022distill,
+  title={Efficient Knowledge Distillation for Multilingual Language Models},
+  author={Zhang, Mingyuan and Zhao, Lei},
+  booktitle={EMNLP},
+  year={2022}
+}</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= EXPERIENCE SECTION ======= -->
+    <section id="experience" class="section">
+      <div class="section-title-block">
+        <h2 class="section-title">科研经历</h2>
+        <p class="section-desc">学术研究与工业实习经历</p>
+      </div>
+
+      <div class="timeline" id="experienceTimeline">
+
+        <div class="timeline-item reveal" data-side="right">
+          <div class="timeline-dot tl-dot-active"></div>
+          <div class="timeline-content">
+            <div class="tl-header">
+              <div class="tl-logo tl-logo-google">G</div>
+              <div>
+                <div class="tl-title">研究实习生</div>
+                <div class="tl-org">Google Research · Brain Team</div>
+                <div class="tl-time">2024.06 – 2024.12 · 北京/远程</div>
+              </div>
+            </div>
+            <div class="tl-body">
+              <ul>
+                <li>参与 Gemini 多模态大模型的高效推理优化，推理速度提升 30%</li>
+                <li>提出新型视觉编码策略，在 VQA 任务上达到 SOTA 性能</li>
+                <li>与 10+ 研究员合作，完成 2 篇论文的实验验证</li>
+              </ul>
+            </div>
+            <div class="tl-tags">
+              <span class="tag">多模态学习</span>
+              <span class="tag">模型优化</span>
+              <span class="tag">PyTorch</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="tl-header">
+              <div class="tl-logo tl-logo-tsinghua">清</div>
+              <div>
+                <div class="tl-title">博士研究生</div>
+                <div class="tl-org">清华大学 · 智能信息处理实验室</div>
+                <div class="tl-time">2022.09 – 至今 · 北京</div>
+              </div>
+            </div>
+            <div class="tl-body">
+              <ul>
+                <li>导师：XXX 教授（IEEE Fellow），研究方向：高效深度学习</li>
+                <li>主持国家自然科学基金青年项目子课题</li>
+                <li>已发表 NeurIPS / CVPR / EMNLP 等顶会论文 6 篇</li>
+              </ul>
+            </div>
+            <div class="tl-tags">
+              <span class="tag">深度学习</span>
+              <span class="tag">计算机视觉</span>
+              <span class="tag">NLP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-side="right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="tl-header">
+              <div class="tl-logo tl-logo-msra">M</div>
+              <div>
+                <div class="tl-title">研究实习生</div>
+                <div class="tl-org">Microsoft Research Asia · NLP Group</div>
+                <div class="tl-time">2022.01 – 2022.06 · 北京</div>
+              </div>
+            </div>
+            <div class="tl-body">
+              <ul>
+                <li>研究大规模预训练语言模型的跨语言迁移学习</li>
+                <li>独立完成 EMNLP 2022 论文从想法到发表的全过程</li>
+              </ul>
+            </div>
+            <div class="tl-tags">
+              <span class="tag">预训练模型</span>
+              <span class="tag">多语言NLP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="tl-header">
+              <div class="tl-logo tl-logo-pku">北</div>
+              <div>
+                <div class="tl-title">硕士研究生</div>
+                <div class="tl-org">北京大学 · 计算机视觉实验室</div>
+                <div class="tl-time">2019.09 – 2022.06 · 北京</div>
+              </div>
+            </div>
+            <div class="tl-body">
+              <ul>
+                <li>研究扩散模型在小样本目标检测中的应用</li>
+                <li>毕业论文获北京大学优秀硕士论文奖</li>
+                <li>发表 CVPR 2023 论文（硕士期间完成）</li>
+              </ul>
+            </div>
+            <div class="tl-tags">
+              <span class="tag">扩散模型</span>
+              <span class="tag">目标检测</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= HONORS SECTION ======= -->
+    <section id="honors" class="section">
+      <div class="section-title-block">
+        <h2 class="section-title">荣誉奖项</h2>
+        <p class="section-desc">学术奖项、奖学金及社会服务</p>
+      </div>
+
+      <div class="honors-grid">
+        <div class="honor-card reveal honor-gold">
+          <div class="honor-year">2024</div>
+          <div class="honor-icon">🏆</div>
+          <div class="honor-title">NeurIPS 杰出论文奖</div>
+          <div class="honor-body">Top 0.5% of all submissions · Neural Information Processing Systems</div>
+        </div>
+        <div class="honor-card reveal honor-blue">
+          <div class="honor-year">2024</div>
+          <div class="honor-icon">🎓</div>
+          <div class="honor-title">Google PhD Fellowship</div>
+          <div class="honor-body">机器学习方向 · 全球每年约100人获此殊荣</div>
+        </div>
+        <div class="honor-card reveal honor-silver">
+          <div class="honor-year">2023</div>
+          <div class="honor-icon">⭐</div>
+          <div class="honor-title">国家奖学金</div>
+          <div class="honor-body">清华大学博士研究生最高奖学金</div>
+        </div>
+        <div class="honor-card reveal honor-blue">
+          <div class="honor-year">2023</div>
+          <div class="honor-icon">🔬</div>
+          <div class="honor-title">清华优秀博士生奖</div>
+          <div class="honor-body">全院前 5%，科研贡献突出奖励</div>
+        </div>
+        <div class="honor-card reveal honor-silver">
+          <div class="honor-year">2022</div>
+          <div class="honor-icon">📝</div>
+          <div class="honor-title">北京大学优秀硕士论文</div>
+          <div class="honor-body">全院评选，仅 10% 毕业生获得</div>
+        </div>
+        <div class="honor-card reveal">
+          <div class="honor-year">2022</div>
+          <div class="honor-icon">🥇</div>
+          <div class="honor-title">微软学者</div>
+          <div class="honor-body">Microsoft Research Asia Fellowship 2022</div>
+        </div>
+      </div>
+
+      <!-- Academic Service -->
+      <div class="card reveal" style="margin-top: 2.5rem">
+        <div class="card-header">
+          <span class="card-icon">🤝</span>
+          <h3>学术服务</h3>
+        </div>
+        <div class="service-table">
+          <div class="service-row">
+            <span class="service-role">审稿人</span>
+            <span class="service-venues">NeurIPS 2023/2024, ICML 2024, ICLR 2024, CVPR 2024, TPAMI 2023</span>
+          </div>
+          <div class="service-row">
+            <span class="service-role">助理教师</span>
+            <span class="service-venues">深度学习（2024秋）, 机器学习（2024春）, 计算机视觉（2023秋）</span>
+          </div>
+          <div class="service-row">
+            <span class="service-role">组织委员</span>
+            <span class="service-venues">清华 AI 论坛 2023, AI for Science Workshop @ NeurIPS 2024</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= TEACHING SECTION ======= -->
+    <section id="teaching" class="section">
+      <div class="section-title-block">
+        <h2 class="section-title">教学服务</h2>
+        <p class="section-desc">课程助教与学生指导</p>
+      </div>
+
+      <div class="teaching-grid">
+        <div class="teaching-card reveal">
+          <div class="tc-header">
+            <div class="tc-icon">🧠</div>
+            <div>
+              <div class="tc-title">深度学习</div>
+              <div class="tc-role badge badge-blue">助教</div>
+            </div>
+            <div class="tc-semester">2024 Fall</div>
+          </div>
+          <div class="tc-body">
+            <div class="tc-school">清华大学 · 计算机系</div>
+            <div class="tc-desc">负责习题课讲授、实验指导和期末阅卷。设计了 Transformer 实现实验，获同学好评。</div>
+          </div>
+        </div>
+        <div class="teaching-card reveal">
+          <div class="tc-header">
+            <div class="tc-icon">📊</div>
+            <div>
+              <div class="tc-title">机器学习</div>
+              <div class="tc-role badge badge-blue">助教</div>
+            </div>
+            <div class="tc-semester">2024 Spring</div>
+          </div>
+          <div class="tc-body">
+            <div class="tc-school">清华大学 · 计算机系</div>
+            <div class="tc-desc">讲授线性模型、树模型、支持向量机等经典算法，辅助学生完成课程项目。</div>
+          </div>
+        </div>
+        <div class="teaching-card reveal">
+          <div class="tc-header">
+            <div class="tc-icon">👁️</div>
+            <div>
+              <div class="tc-title">计算机视觉</div>
+              <div class="tc-role badge badge-blue">助教</div>
+            </div>
+            <div class="tc-semester">2023 Fall</div>
+          </div>
+          <div class="tc-body">
+            <div class="tc-school">清华大学 · 计算机系</div>
+            <div class="tc-desc">负责目标检测与分割专题实验，开发了配套代码框架，减少同学配环境时间 80%。</div>
+          </div>
+        </div>
+        <div class="teaching-card reveal">
+          <div class="tc-header">
+            <div class="tc-icon">🔬</div>
+            <div>
+              <div class="tc-title">CVPR / ICML / NeurIPS</div>
+              <div class="tc-role badge badge-orange">审稿人</div>
+            </div>
+            <div class="tc-semester">2023–2024</div>
+          </div>
+          <div class="tc-body">
+            <div class="tc-school">国际顶级 AI 会议</div>
+            <div class="tc-desc">担任多个顶级会议论文评审，累计审稿 30+ 篇，贡献高质量学术评审意见。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mentored Students -->
+      <div class="card reveal" style="margin-top:2rem">
+        <div class="card-header">
+          <span class="card-icon">👨‍🎓</span>
+          <h3>指导学生</h3>
+        </div>
+        <div class="mentee-list">
+          <div class="mentee-item">
+            <div class="mentee-avatar">李</div>
+            <div>
+              <div class="mentee-name">李小明（本科生）</div>
+              <div class="mentee-info">发表 CVPR 2024 论文，现保研清华大学</div>
+            </div>
+          </div>
+          <div class="mentee-item">
+            <div class="mentee-avatar">王</div>
+            <div>
+              <div class="mentee-name">王雨（本科生）</div>
+              <div class="mentee-info">参与 NeurIPS 项目，获得 Google 实习 offer</div>
+            </div>
+          </div>
+          <div class="mentee-item">
+            <div class="mentee-avatar">赵</div>
+            <div>
+              <div class="mentee-name">赵强（硕士生）</div>
+              <div class="mentee-info">联合指导，研究方向为多模态学习</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= CONTACT SECTION ======= -->
+    <section id="contact" class="section">
+      <div class="section-title-block">
+        <h2 class="section-title">联系方式</h2>
+        <p class="section-desc">欢迎学术合作、实习咨询或简单打个招呼</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-label">邮件</div>
+          <a href="mailto:zmyuan@example.edu.cn" class="contact-value">zmyuan@example.edu.cn</a>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon">💬</div>
+          <div class="contact-label">微信</div>
+          <div class="contact-value">zmyuan_AI</div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon">📍</div>
+          <div class="contact-label">办公室</div>
+          <div class="contact-value">清华大学 FIT 楼 3-422</div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-label">回复时间</div>
+          <div class="contact-value">通常 24 小时内</div>
+        </div>
+      </div>
+
+      <!-- Message Form -->
+      <div class="card reveal" style="margin-top:2rem">
+        <div class="card-header">
+          <span class="card-icon">📬</span>
+          <h3>发送消息</h3>
+        </div>
+        <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>姓名 *</label>
+              <input type="text" placeholder="您的姓名" required />
+            </div>
+            <div class="form-group">
+              <label>邮箱 *</label>
+              <input type="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>主题</label>
+            <select>
+              <option>学术合作</option>
+              <option>论文讨论</option>
+              <option>实习咨询</option>
+              <option>其他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>消息内容 *</label>
+            <textarea placeholder="请输入您的消息..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">发送消息 →</button>
+          <div class="form-success" id="formSuccess">✅ 消息已发送！我会尽快回复您。</div>
+        </form>
+      </div>
+
+    </section>
+
+  </div><!-- end content-area -->
+</main>
+
+<!-- ========== RIGHT PANEL (Desktop only) ========== -->
+<aside class="right-panel" id="rightPanel">
+
+  <div class="rp-widget">
+    <div class="rp-header">
+      <span>📅</span>
+      <span id="calMonth">2026年 四月</span>
+      <div class="cal-nav">
+        <button onclick="changeMonth(-1)">‹</button>
+        <button onclick="changeMonth(1)">›</button>
+      </div>
+    </div>
+    <div class="calendar-grid" id="calendarGrid"></div>
+    <div class="cal-today">今天 &nbsp;·&nbsp; <span id="todayLabel"></span></div>
+  </div>
+
+  <div class="rp-widget">
+    <div class="rp-header"><span>🔔</span><span>最新动态</span></div>
+    <div class="rp-news-mini">
+      <div class="rp-news-item"><div class="rp-news-icon rp-icon-red">📄</div><div><div class="rp-news-title">NeurIPS 2024 接收</div><div class="rp-news-sub">关于Transformer高效注意力 · 2024-12</div></div></div>
+      <div class="rp-news-item"><div class="rp-news-icon rp-icon-gold">🏆</div><div><div class="rp-news-title">杰出论文奖</div><div class="rp-news-sub">Top 0.5%的杰出论文奖 · 2024-12</div></div></div>
+      <div class="rp-news-item"><div class="rp-news-icon rp-icon-blue">💼</div><div><div class="rp-news-title">Google Research实习</div><div class="rp-news-sub">参与Gemini多模态优化 · 2024-06</div></div></div>
+      <div class="rp-news-item"><div class="rp-news-icon rp-icon-green">🎤</div><div><div class="rp-news-title">CVPR 2024 口头报告</div><div class="rp-news-sub">西雅图口头报告发表 · 2024-06</div></div></div>
+    </div>
+  </div>
+
+  <div class="rp-widget">
+    <div class="rp-header"><span>📖</span><span>教学服务</span></div>
+    <div class="rp-teaching">
+      <div class="rp-tc-item"><div class="rp-tc-name">深度学习</div><div class="rp-tc-info">清华大学 · 2024春季</div><span class="badge badge-blue">助教</span></div>
+      <div class="rp-tc-item"><div class="rp-tc-name">计算机视觉</div><div class="rp-tc-info">清华大学 · 2023秋季</div><span class="badge badge-blue">助教</span></div>
+      <div class="rp-tc-sub">审稿经历</div>
+      <div class="rp-review-tags">
+        <span class="tag">CVPR 2024</span>
+        <span class="tag">ICML 2024</span>
+        <span class="tag">NeurIPS 2023</span>
+        <span class="tag">TPAMI 2023</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="rp-widget">
+    <div class="rp-header"><span>👁️</span><span>访问统计</span></div>
+    <div class="visitor-counter">
+      <div class="vc-digits" id="vcDigits"></div>
+    </div>
+  </div>
+
+  <div class="rp-widget">
+    <div class="rp-header"><span>🔗</span><span>快速链接</span></div>
+    <div class="quick-links">
+      <a href="#" class="ql-item"><span>🐙</span> GitHub</a>
+      <a href="#" class="ql-item"><span>🎓</span> Google Scholar</a>
+      <a href="#" class="ql-item"><span>💼</span> LinkedIn</a>
+      <a href="#" class="ql-item"><span>✉️</span> Email</a>
+      <a href="cv.pdf" class="ql-item"><span>📄</span> 下载简历</a>
+    </div>
+  </div>
+
+</aside>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
