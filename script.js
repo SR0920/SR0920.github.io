@@ -52,7 +52,7 @@ function initAll() {
   initTheme();
   initSidebar();
   initRightPanel();
-  initNav();
+  // initNav();
   initRouter('home');   // 默认显示主页
   initReveal();
   initBackToTop();
