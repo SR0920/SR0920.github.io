@@ -45,7 +45,7 @@ window.PROFILE = {
    * ---------------------------------------------------------- */
   summary: `孙瑞，男，复旦大学和上海创智学院博士研究生，中共党员，<strong>2023年硕士研究生国家奖学金获得者</strong>。
 研究方向为：计算机视觉、深度学习、多模态大模型，现已在ICLR、IJCAI、IEEE TNNLS等顶级期刊和会议上以第一作者（共一或通讯）发表学术论文 <strong>6篇</strong>，其中 CCF A 类会议2篇（ICLR、IJCAI），SCI 一区 Top 期刊2篇（IEEE TNNLS、JBHI），公开中国发明专利 <strong>3项</strong>。
-曾获得 ICCSMT 2023 国际会议 <strong>Best Oral Presentation</strong>、研究生电子设计竞赛<strong>全国一等奖</strong>和<strong>最佳论文奖</strong>等国家级奖项 3 项、省级奖项 6 项、校级奖项 15 项；
+曾获得 ICCSMT 2023 国际会议 <strong>Best Oral Presentation</strong>、研究生电子设计竞赛<strong>全国一等奖</strong>和<strong>最佳论文奖</strong>等国家级奖项 6 项、省级奖项 6 项、校级奖项 15 项；
 参与横向课题 2 项，国家自然科学基金项目 3 项，省自然科学基金项目 2 项，国际会议公开作报告 2 次。
 熟悉机器学习、深度学习等常用框架与算法，目前担任 <strong>IEEE JBHI、Neurocomputing、Neural Networks、IET Image Processing等期刊审稿人</strong>、<strong>Frontiers in Signal Processing 期刊客座副主编</strong>。`,
 
