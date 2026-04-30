@@ -390,12 +390,13 @@ window.PROFILE = {
     { date: "2023-10", type: "national", title: "ICCSMT 2023 Best Oral Presentation", detail: "唯一一项" },
     { date: "2023-08", type: "national", title: "研究生电子设计竞赛全国一等奖", detail: "第十八届中国研究生电子设计竞赛" },
     { date: "2023-08", type: "national", title: "研究生电子设计竞赛最佳论文奖", detail: "第十八届中国研究生电子设计竞赛" },
-    { date: "2021-10", type: "national", title: "中国国际互联网+大赛国家级铜奖", detail: "第七届" },
+    { date: "2021-10", type: "national", title: "第七届中国国际‘互联网+’大学生创新创业大赛国家级铜奖", detail: "中国国际‘互联网+’大学生创新创业大赛组织委员会" },
     // ── 省级 ──
     { date: "2023-10", type: "provincial", title: "互联网+大赛陕西省银奖", detail: "第九届中国国际互联网+大赛" },
     { date: "2023-07", type: "provincial", title: "陕西省研究生创新成果展省级二等奖", detail: "陕西省第七届研究生创新成果展" },
     { date: "2023-07", type: "provincial", title: "研电赛技术赛西北赛区一等奖", detail: "中国研究生电子设计竞赛" },
     { date: "2023-07", type: "provincial", title: "研电赛商业赛西北赛区二等奖", detail: "中国研究生电子设计竞赛" },
+    { date: "2021-09", type: "provincial", title: "第七届中国国际‘互联网+’大学生创新创业大赛陕西赛区省级金奖", detail: "中国国际‘互联网+’大学生创新创业大赛陕西赛区组织委员会" },
     { date: "2019-12", type: "provincial", title: "全国大学生数学建模竞赛本科组陕西赛区一等奖", detail: "陕西省教育厅" },
     // ── 校级 ──
     { date: "2024-06", type: "school", title: "优秀硕士毕业论文", detail: "2024年校级荣誉" },
