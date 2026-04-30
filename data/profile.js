@@ -115,7 +115,7 @@ window.PROFILE = {
   stats: [
     { num: 6,   label: "学术论文" },
     { num: 3,   label: "发明专利" },
-    { num: 3,   label: "国家级奖项" },
+    { num: 6,   label: "国家级奖项" },
     { num: 300, label: "论文被引数" },
   ],
 
