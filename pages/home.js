@@ -27,10 +27,10 @@ const RESEARCH_CARDS = [
  * 修改：直接增删 HIGHLIGHTS 数组
  */
 const HIGHLIGHTS = [
-  { icon: "🏆", title: "NeurIPS / IJCAI / TNNLS 等顶级成果", sub: "CCF-A × 1，SCI Q1 × 2，共 6 篇学术论文" },
+  { icon: "🏆", title: "ICLR / IJCAI / TNNLS 等顶级成果", sub: "CCF-A × 2，SCI Q1 × 2，共 6 篇学术论文" },
   { icon: "🎖️", title: "研究生电子设计竞赛全国一等奖 & 最佳论文奖", sub: "国家级奖项 3 项，省级奖项 6 项，校级奖项 15 项" },
   { icon: "📡", title: "央视新闻联播报道（2025.04）", sub: "接见国家主席习近平调研上海人工智能发展" },
-  { icon: "📝", title: "IET Image Processing 审稿人", sub: "兼任 Frontiers in Signal Processing 期刊客座副主编" },
+  { icon: "📝", title: "IEEE JBHI、Neurocomputing、Neural Networks等期刊审稿人或客座副主编", sub: "兼任 Frontiers in Signal Processing 期刊客座副主编" },
 ];
 
 /**
