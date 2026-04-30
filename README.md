@@ -72,14 +72,6 @@ sunrui-homepage/
 
 ---
 
-## 🚀 GitHub Pages 部署（3步）
-
-1. 创建仓库 `你的用户名.github.io`（或任意仓库名）
-2. 上传所有文件（保持文件夹结构不变）
-3. **Settings → Pages → Source → main branch → Save**
-
-几分钟后访问：`https://你的用户名.github.io`
-
 ---
 
 ## ⌨️ 键盘快捷键
