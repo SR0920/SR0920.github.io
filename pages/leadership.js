@@ -39,7 +39,7 @@ window.PAGE_RENDERERS.leadership = function() {
       <div class="section-head reveal">
         <div class="section-eyebrow">STUDENT LEADERSHIP</div>
         <h2 class="section-title">学生干部经历</h2>
-        <p class="section-desc">先后担任党支部书记、大班长、辅导员助理等职务，获个人荣誉十余项</p>
+        <p class="section-desc">先后担任党支部书记、年级大班长、辅导员助理等职务，获个人荣誉十余项</p>
       </div>
 
       <!-- 荣誉称号汇总 -->
@@ -50,7 +50,7 @@ window.PAGE_RENDERERS.leadership = function() {
         </div>
         <div class="interest-tags">${honorTags}</div>
         <p style="margin-top:.85rem;font-size:.84rem;color:var(--txt-3)">
-          个人事迹在<strong style="color:var(--txt-2)">学校官微头条</strong>宣传报道；2022年被推选为中共陕西科技大学第三次代表大会<strong style="color:var(--txt-2)">全校12名学生代表之一（学院唯一）</strong>。
+          个人事迹在<strong style="color:var(--txt-2)">学校官微头条</strong>宣传报道；2022年被推选为学校第三次党员代表大会<strong style="color:var(--txt-2)">全校12名学生代表之一（学院唯一）</strong>。
         </p>
       </div>
 
