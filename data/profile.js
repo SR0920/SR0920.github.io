@@ -21,8 +21,8 @@ window.PROFILE = {
   basic: {
     nameCn:     "孙瑞",
     nameEn:     "Rui Sun",
-    // avatarUrl:  "https://api.dicebear.com/7.x/avataaars/svg?seed=SunRui&backgroundColor=b6e3f4",  // 网络随机选取的照片用来测试
-    avatarUrl:  "./images/SR.jpg",
+    avatarUrl:  "https://api.dicebear.com/7.x/avataaars/svg?seed=SunRui&backgroundColor=b6e3f4",  // 网络随机选取的照片用来测试
+    // avatarUrl:  "./images/SR.jpg",
     birth:      "1999/09/20",
     political:  "中共党员",
     hometown:   "陕西·榆林",
