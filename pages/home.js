@@ -19,7 +19,7 @@ const RESEARCH_CARDS = [
   { icon: "⚡", title: "轻量化深度学习",   desc: "模型压缩、知识蒸馏、高效 Transformer 架构设计" },
   { icon: "🌐", title: "多模态大模型",     desc: "多模态感知与推理，MCP多专家协同架构，医疗AI Agent" },
   { icon: "🔬", title: "医学AI应用",      desc: "肝脏、心脏等器官智能诊断，与三甲医院深度合作" },
-  { icon: "✨", title: "边缘检测与分析",   desc: "图像边缘检测综述，被引167次，Frontiers期刊" },
+  { icon: "✨", title: "边缘检测与分析",   desc: "图像边缘检测综述，被引200+次，SCI-Q2期刊" },
 ];
 
 /**
