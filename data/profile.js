@@ -44,10 +44,10 @@ window.PROFILE = {
    * 修改：直接改 summaryItems 数组的字符串
    * ---------------------------------------------------------- */
   summary: `孙瑞，男，复旦大学和上海创智学院博士研究生，中共党员，<strong>2023年硕士研究生国家奖学金获得者</strong>。
-研究方向为：深度学习、计算机视觉，现已发表学术论文 <strong>6篇</strong>，其中 CCF A 类会议一篇（IJCAI），SCI 一区 Top 期刊两篇（IEEE JBHI、TNNLS），公开中国发明专利 <strong>3项</strong>。
-曾获得 ICCSMT 2023 国际会议 <strong>Best Oral Presentation</strong>、研究生电子设计竞赛<strong>全国一等奖</strong>和最佳论文奖等国家级奖项 3 项、省级奖项 6 项、校级奖项 15 项；
+研究方向为：计算机视觉、深度学习、多模态大模型，现已在ICLR、IJCAI、IEEE TNNLS等顶级期刊和会议上以第一作者（共一或通讯）发表学术论文 <strong>6篇</strong>，其中 CCF A 类会议2篇（ICLR、IJCAI），SCI 一区 Top 期刊2篇（IEEE TNNLS、JBHI），公开中国发明专利 <strong>3项</strong>。
+曾获得 ICCSMT 2023 国际会议 <strong>Best Oral Presentation</strong>、研究生电子设计竞赛<strong>全国一等奖</strong>和<strong>最佳论文奖</strong>等国家级奖项 3 项、省级奖项 6 项、校级奖项 15 项；
 参与横向课题 2 项，国家自然科学基金项目 3 项，省自然科学基金项目 2 项，国际会议公开作报告 2 次。
-熟悉机器学习、深度学习等常用框架与算法，担任 <strong>IET Image Processing 期刊审稿人</strong>、<strong>Frontiers in Signal Processing 期刊客座副主编</strong>。`,
+熟悉机器学习、深度学习等常用框架与算法，目前担任 <strong>IEEE JBHI、Neurocomputing、Neural Networks、IET Image Processing等期刊审稿人</strong>、<strong>Frontiers in Signal Processing 期刊客座副主编</strong>。`,
 
   /* ----------------------------------------------------------
    * 最新动态（主页展示，最多显示 5 条，其余可展开）
@@ -55,9 +55,10 @@ window.PROFILE = {
    * type 取值："论文"|"奖项"|"会议"|"实习"|"其他"
    * ---------------------------------------------------------- */
   news: [
+    { date: "2026-01", type: "论文",  content: "Disco: Densely-overlapping Cell Instance Segmentation via Adjacency-aware Collaborative Coloring被<strong>CCF A类会议ICLR 2026</strong>接收发表" },
+    { date: "2025-10", type: "论文",  content: "TEC-Net: Vision Transformer Embrace Convolutional Neural Networks for Medical Image Segmentation被<strong>一区Top期刊IEEE TNNLS</strong>接收发表" },
     { date: "2025-04", type: "其他",  content: "接见国家主席习近平来上海市调研人工智能发展，<strong>登上央视新闻联播</strong>" },
     { date: "2025-07", type: "其他",  content: "接见<strong>教育部副部长吴岩</strong>来学院调研人工智能发展" },
-    { date: "2025-10", type: "项目",  content: "主导<strong>心脏多模态全维感知与智能分析系统</strong>项目启动，合作单位为上海知名三甲医院" },
     { date: "2024-09", type: "教育",  content: "入读<strong>复旦大学</strong>生物医学工程博士 & <strong>上海创智学院</strong>人工智能博士" },
     { date: "2024-06", type: "奖项",  content: "荣获校级<strong>优秀硕士毕业论文</strong>、优秀毕业生学生干部（学院唯一）" },
     { date: "2023-10", type: "奖项",  content: "荣获<strong>硕士研究生国家奖学金</strong>" },
@@ -75,7 +76,7 @@ window.PROFILE = {
       school:   "上海创智学院",
       degree:   "博士研究生",
       major:    "人工智能",
-      advisor:  "程远 研究员（复旦人工智能创新与产业研究院副院长，曾任蚂蚁集团视觉认知团队负责人）",
+      advisor:  "程远 研究员（复旦人工智能创新与产业研究院副院长，上海科学智能研究院副院长）",
       active:   true,
     },
     {
@@ -86,14 +87,6 @@ window.PROFILE = {
       advisor:  "江雪 副教授（国家优青、上海市曙光人才、MIT科技评论35岁以下科技创新35人）",
       active:   true,
     },
-    {
-      period:   "2021.09 — 2024.06",
-      school:   "陕西科技大学",
-      degree:   "硕士（保研）",
-      major:    "计算机技术",
-      advisor:  "雷涛 教授（陕西省杰青、校学术委员会委员、学院院长、全球前2%顶尖科学家）",
-      active:   false,
-    },
   ],
 
   /* ----------------------------------------------------------
@@ -101,8 +94,8 @@ window.PROFILE = {
    * 修改：直接增删数组元素
    * ---------------------------------------------------------- */
   interests: [
-    "计算机视觉", "深度学习", "医学图像分割", "多模态大模型",
-    "Transformer架构", "目标检测", "知识蒸馏", "图神经网络",
+    "计算机视觉", "深度学习", "医学图像分割", 
+    "Transformer", "多模态Agent", "多模态大模型",
   ],
 
   /* ----------------------------------------------------------
