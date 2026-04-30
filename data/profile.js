@@ -21,21 +21,21 @@ window.PROFILE = {
   basic: {
     nameCn:     "孙瑞",
     nameEn:     "Rui Sun",
-    avatarUrl:  "https://api.dicebear.com/7.x/avataaars/svg?seed=SunRui&backgroundColor=b6e3f4",
-    avatarUrl: "images/SR.jpg"
-    birth:      "1999/9/20",
+    // avatarUrl:  "https://api.dicebear.com/7.x/avataaars/svg?seed=SunRui&backgroundColor=b6e3f4",  // 网络随机选取的照片用来测试
+    avatarUrl:  "images/SR.jpg"
+    birth:      "1999/09/20",
     political:  "中共党员",
     hometown:   "陕西·榆林",
     phone:      "138 9228 0733",
     email:      "siri00@126.com",
     researchCn: "计算机视觉 · 深度学习 · 多模态大模型",
-    researchEn: "Computer Vision · Deep Learning · Multimodal LLM",
+    researchEn: "Computer Vision · Deep Learning · Multimodal Large Model",
     locationCn: "上海·复旦大学",
     locationEn: "Shanghai, Fudan University",
-    wechat:     "（见简历二维码）",
-    mypage:     "#",          // 个人主页链接
-    github:     "#",          // GitHub 链接
-    googleScholar: "#",       // Google Scholar 链接
+    wechat:     "138 9228 0733",
+    mypage:     "https://sr0920.github.io",          // 个人主页链接
+    github:     "https://github.com/SR0920",          // GitHub 链接
+    googleScholar: "https://scholar.google.com/citations?user=sHBia6oAAAAJ&hl=zh-CN",       // Google Scholar 链接
     cvUrl:      "cv.pdf",     // 简历 PDF 路径
   },
 
