@@ -270,7 +270,7 @@ function initSidebar() {
       <div class="profile-tags">
         <span class="tag tag-blue">复旦大学</span>
         <span class="tag tag-gold">国家奖学金</span>
-        <span class="tag tag-green">NeurIPS</span>
+        <span class="tag tag-green">CCF A类会议</span>
       </div>
     `;
   }
