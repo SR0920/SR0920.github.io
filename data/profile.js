@@ -414,7 +414,6 @@ window.PROFILE = {
     { date: "2023-08", type: "national", title: "第十八届中国研究生电子设计竞赛商业计划书专项赛国家级二等奖", detail: "中国电子学会" },
     { date: "2021-10", type: "national", title: "第七届中国国际‘互联网+’大学生创新创业大赛国家级铜奖", detail: "中国国际‘互联网+’大学生创新创业大赛组织委员会" },
     // ── 省级 ──
-    { date: "2023-10", type: "provincial", title: "互联网+大赛陕西省银奖", detail: "第九届中国国际互联网+大赛" },
     { date: "2023-09", type: "provincial", title: "陕西省第七届研究生创新成果展高质量成果省级二等奖", detail: "陕西省教育厅" },
     { date: "2023-08", type: "provincial", title: "第九届中国国际‘互联网+’大学生创新创业大赛陕西赛区省级银奖", detail: "中国国际‘互联网+’大学生创新创业大赛陕西赛区组织委员会" },
     { date: "2023-07", type: "provincial", title: "第十八届中国研究生电子设计竞赛西北分赛区技术赛一等奖", detail: "中国研究生电子设计竞赛" },
