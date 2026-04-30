@@ -398,6 +398,9 @@ window.PROFILE = {
   academicService: {
     // 担任期刊审稿人
     reviewer: [
+      { journal: "IEEE JBHI",          role: "审稿人（Reviewer）" },
+      { journal: "Neurocomputing",          role: "审稿人（Reviewer）" },
+      { journal: "Neural Networks",          role: "审稿人（Reviewer）" },
       { journal: "IET Image Processing",          role: "审稿人（Reviewer）" },
       { journal: "Frontiers in Signal Processing", role: "客座副主编（Guest Associate Editor）" },
     ],
