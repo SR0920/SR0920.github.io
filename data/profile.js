@@ -57,8 +57,8 @@ window.PROFILE = {
   news: [
     { date: "2026-01", type: "论文",  content: "Disco: Densely-overlapping Cell Instance Segmentation via Adjacency-aware Collaborative Coloring被<strong>CCF A类会议ICLR 2026</strong>接收发表" },
     { date: "2025-10", type: "论文",  content: "TEC-Net: Vision Transformer Embrace Convolutional Neural Networks for Medical Image Segmentation被<strong>一区Top期刊IEEE TNNLS</strong>接收发表" },
-    { date: "2025-04", type: "其他",  content: "<strong>国家主席习近平</strong>来上海市调研人工智能发展，与总书记面对面交谈，<strong>登上央视新闻联播</strong>" },
-    { date: "2025-07", type: "其他",  content: "<strong>教育部副部长吴岩</strong>来学院调研人工智能发展，与副部长面对面交谈" },
+    { date: "2025-04", type: "其他",  content: "<strong>国家主席习近平</strong>来上海市调研人工智能发展，与其面对面交谈，<strong>登上央视新闻联播</strong>" },
+    { date: "2025-07", type: "其他",  content: "<strong>教育部副部长吴岩</strong>来学院调研人工智能发展，与其面对面交谈" },
     { date: "2024-09", type: "教育",  content: "入读<strong>复旦大学</strong>生物医学工程博士 & <strong>上海创智学院</strong>人工智能博士" },
     { date: "2024-06", type: "奖项",  content: "荣获校级<strong>优秀硕士毕业论文</strong>、<strong>优秀毕业生学生干部（学院唯一）</strong>" },
     { date: "2023-10", type: "奖项",  content: "荣获<strong>硕士研究生国家奖学金</strong>" },
@@ -406,7 +406,7 @@ window.PROFILE = {
    * ---------------------------------------------------------- */
   honors: [
     // ── 国家级 ──
-    { date: "2025-04", type: "national", title: "央视新闻联播", detail: "接见国家主席习近平来上海市调研人工智能发展，登上央视新闻联播" },
+    { date: "2025-04", type: "national", title: "央视新闻联播", detail: "国家主席习近平来上海市调研人工智能发展，与其面对面交谈，登上央视新闻联播" },
     { date: "2023-10", type: "national", title: "2022-2023学年度硕士研究生国家奖学金", detail: "中华人民共和国教育部" },
     { date: "2023-10", type: "national", title: "ICCSMT 2023 国际会议 Best Oral Presentation", detail: "唯一一项" },
     { date: "2023-08", type: "national", title: "第十八届中国研究生电子设计竞赛国家级一等奖", detail: "中国电子学会" },
